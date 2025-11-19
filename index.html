@@ -352,6 +352,32 @@
             border-bottom: none;
         }
 
+        .section-collapsible {
+            margin-bottom: 30px;
+        }
+
+        .section-collapsible summary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-size: 1.5em;
+            padding: 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .section-collapsible summary:hover {
+            background: linear-gradient(135deg, #5568d3 0%, #6a4091 100%);
+        }
+
+        .section-collapsible[open] summary {
+            border-bottom: 3px solid #667eea;
+            margin-bottom: 20px;
+        }
+
+        .section-content {
+            padding: 0 10px;
+        }
+
         .comparison-table {
             width: 100%;
             border-collapse: collapse;
@@ -526,29 +552,31 @@
         </div>
 
         <!-- Flights Section -->
-        <div class="section">
-            <h2 class="section-title">✈️ Flights</h2>
-            <div class="card-grid">
-                <div class="card flight-card">
-                    <h3>United Airlines - Nonstop Round Trip</h3>
-                    <div class="card-price">$421 <span style="font-size: 0.5em;">per person</span></div>
-                    <ul class="card-details">
-                        <li><strong>Outbound:</strong> Sat, Dec 27 • 7:10 PM - 10:41 PM (2h 31m)</li>
-                        <li><strong>Return:</strong> Wed, Dec 31 • 6:31 AM - 8:40 AM (3h 9m)</li>
-                        <li>Both flights nonstop</li>
-                        <li>Operated by SkyWest (United Express)</li>
-                        <li>Economy (includes Basic)</li>
-                    </ul>
-                    <a href="https://www.google.com/travel/flights?q=Flights%20to%20Albuquerque%20from%20San%20Francisco%20on%202025-12-27%20through%202025-12-31" target="_blank" class="btn">Book on Google Flights →</a>
+        <details class="section-collapsible" open>
+            <summary>✈️ Flights</summary>
+            <div class="section-content">
+                <div class="card-grid">
+                    <div class="card flight-card">
+                        <h3>United Airlines - Nonstop Round Trip</h3>
+                        <div class="card-price">$421 <span style="font-size: 0.5em;">per person</span></div>
+                        <ul class="card-details">
+                            <li><strong>Outbound:</strong> Sat, Dec 27 • 7:10 PM - 10:41 PM (2h 31m)</li>
+                            <li><strong>Return:</strong> Wed, Dec 31 • 6:31 AM - 8:40 AM (3h 9m)</li>
+                            <li>Both flights nonstop</li>
+                            <li>Operated by SkyWest (United Express)</li>
+                            <li>Economy (includes Basic)</li>
+                        </ul>
+                        <a href="https://www.google.com/travel/flights?q=Flights%20to%20Albuquerque%20from%20San%20Francisco%20on%202025-12-27%20through%202025-12-31" target="_blank" class="btn">Book on Google Flights →</a>
+                    </div>
                 </div>
             </div>
-        </div>
+        </details>
 
         <!-- Hotels Section -->
-        <div class="section">
-            <h2 class="section-title">🏨 Hotel Options</h2>
-
-            <h3 style="color: #4a5568; margin-top: 30px; margin-bottom: 15px;">Night 1: Friday, December 27 (Arriving 10:41 PM)</h3>
+        <details class="section-collapsible" open>
+            <summary>🏨 Hotel Options</summary>
+            <div class="section-content">
+                <h3 style="color: #4a5568; margin-top: 30px; margin-bottom: 15px;">Night 1: Friday, December 27 (Arriving 10:41 PM)</h3>
             <div class="card-grid">
                 <div class="card">
                     <span class="card-badge budget">Best Value</span>
@@ -642,13 +670,14 @@
                     <a href="https://www.google.com/travel/search?q=Comfort%20Suites%20Albuquerque%20Airport&ts=CAESABogCgIaABIaEhQKBwjpDxAMGBsSBwjpDxAMGB4YATICEAAqCQoFOgNVU0QaAA" target="_blank" class="btn btn-small">View on Google Hotels →</a>
                 </div>
             </div>
-        </div>
+            </div>
+        </details>
 
         <!-- Transportation Section -->
-        <div class="section">
-            <h2 class="section-title">🚗 Transportation: ABQ ↔ Santa Fe (65 miles, ~1h 15m)</h2>
-
-            <div style="background: linear-gradient(135deg, #48bb78 0%, #38a169 100%); color: white; padding: 20px; border-radius: 12px; margin-bottom: 20px;">
+        <details class="section-collapsible" open>
+            <summary>🚗 Transportation: ABQ ↔ Santa Fe</summary>
+            <div class="section-content">
+                <div style="background: linear-gradient(135deg, #48bb78 0%, #38a169 100%); color: white; padding: 20px; border-radius: 12px; margin-bottom: 20px;">
                 <h3 style="color: white; margin-bottom: 10px;">✅ Chosen Transportation Plan</h3>
                 <p style="font-size: 1.1em; line-height: 1.6;">
                     <strong>Parents' vehicles available!</strong> Allison's parents are offering use of their vehicles during the trip.
@@ -718,13 +747,14 @@
             <p style="margin-top: 15px; color: #718096; font-style: italic;">
                 Note: Groome Transportation (formerly Sandia Shuttle) closed Santa Fe operations in Nov 2025.
             </p>
-        </div>
+            </div>
+        </details>
 
         <!-- Sample Itinerary -->
-        <div class="section">
-            <h2 class="section-title">📅 Sample Itinerary</h2>
-
-            <div style="background: #e6f7ff; border: 2px solid #1890ff; border-radius: 12px; padding: 20px; margin-bottom: 20px;">
+        <details class="section-collapsible" open>
+            <summary>📅 Sample Itinerary</summary>
+            <div class="section-content">
+                <div style="background: #e6f7ff; border: 2px solid #1890ff; border-radius: 12px; padding: 20px; margin-bottom: 20px;">
                 <h3 style="color: #0050b3; margin-bottom: 10px;">📝 Important Notes About This Trip</h3>
                 <ul style="color: #4a5568; line-height: 1.8; list-style: none; padding-left: 0;">
                     <li style="margin-bottom: 8px;">🚶 <strong>Parents' Mobility:</strong> Allison's parents aren't super mobile and likely won't join most activities. Time together will mostly be at their house.</li>
@@ -815,13 +845,14 @@
                     for exploring museums, galleries, and activities on your own before the family celebrations begin. Worth checking!
                 </p>
             </div>
-        </div>
+            </div>
+        </details>
 
         <!-- Things to Do Section -->
-        <div class="section">
-            <h2 class="section-title">🎨 Things to Do in Santa Fe</h2>
-
-            <!-- Outdoor Adventures -->
+        <details class="section-collapsible">
+            <summary>🎨 Things to Do in Santa Fe</summary>
+            <div class="section-content">
+                <!-- Outdoor Adventures -->
             <h3 style="color: #667eea; font-size: 1.4em; margin-top: 30px; margin-bottom: 15px; display: flex; align-items: center;">
                 ⛷️ Outdoor Adventures
             </h3>
@@ -910,13 +941,14 @@
                     <a href="https://santafebotanicalgarden.org/" target="_blank" class="btn btn-small">Get Info →</a>
                 </div>
             </div>
-        </div>
+            </div>
+        </details>
 
         <!-- Cost Summary -->
-        <div class="section">
-            <h2 class="section-title">💰 Trip Cost Estimates (Per Person - Couple)</h2>
-
-            <table class="comparison-table">
+        <details class="section-collapsible" open>
+            <summary>💰 Trip Cost Estimates</summary>
+            <div class="section-content">
+                <table class="comparison-table">
                 <thead>
                     <tr>
                         <th>Cost Item</th>
@@ -1183,7 +1215,8 @@
                     </div>
                 </details>
             </div>
-        </div>
+            </div>
+        </details>
 
         <div style="text-align: center; margin-top: 40px; color: #718096;">
             <p>Created with Google Flights MCP & SerpAPI • December 2025</p>
