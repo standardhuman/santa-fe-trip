@@ -352,6 +352,32 @@
             border-bottom: none;
         }
 
+        .section-collapsible {
+            margin-bottom: 30px;
+        }
+
+        .section-collapsible summary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-size: 1.5em;
+            padding: 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .section-collapsible summary:hover {
+            background: linear-gradient(135deg, #5568d3 0%, #6a4091 100%);
+        }
+
+        .section-collapsible[open] summary {
+            border-bottom: 3px solid #667eea;
+            margin-bottom: 20px;
+        }
+
+        .section-content {
+            padding: 0 10px;
+        }
+
         .comparison-table {
             width: 100%;
             border-collapse: collapse;
@@ -521,34 +547,36 @@
         <div class="trip-overview">
             <h2>✨ Trip Overview</h2>
             <p style="font-size: 1.1em; line-height: 1.8; color: white; margin-top: 20px;">
-                A 5-day holiday getaway to Santa Fe, New Mexico from December 27-31, 2025. Fly direct from San Francisco on United Airlines, arriving late Friday evening and returning Tuesday morning on New Year's Eve. The trip centers around a special birthday celebration on December 29 for Allison's dad and brother, with three full days in Santa Fe for winter activities like skiing at Ski Santa Fe, exploring iconic cultural destinations like Meow Wolf and the Georgia O'Keeffe Museum, and enjoying the festive atmosphere of Canyon Road galleries and the Botanical Garden's holiday light show. Smart logistics include staying at Albuquerque airport hotels on arrival and departure nights to avoid early morning drives, with a rental car providing flexibility to explore the Santa Fe National Forest and surrounding areas. Trip costs range from $647-$704 per person for couples, split across budget, recommended, and premium tiers.
+                A 5-day holiday getaway to Santa Fe, New Mexico from December 27-31, 2025. Fly direct from San Francisco on United Airlines, arriving late Friday evening and returning Tuesday morning on New Year's Eve. The trip centers around a special birthday celebration on December 29 for Allison's dad and brother, featuring a special dinner at Sazon Mexican Restaurant (one of Santa Fe's best, with incredible moles from Mexico). Three full days in Santa Fe offer chances to explore iconic cultural destinations like Meow Wolf and the Georgia O'Keeffe Museum, Canyon Road galleries, and outdoor adventures. Smart logistics include staying at Albuquerque airport hotels on arrival and departure nights, with the scenic Rail Runner train for ABQ-Santa Fe travel and Allison's parents' vehicles available for local Santa Fe exploration. A visit with Landon (friend in Albuquerque) rounds out the experience. Trip costs now range from $598-$693 per person for couples.
             </p>
         </div>
 
         <!-- Flights Section -->
-        <div class="section">
-            <h2 class="section-title">✈️ Flights</h2>
-            <div class="card-grid">
-                <div class="card flight-card">
-                    <h3>United Airlines - Nonstop Round Trip</h3>
-                    <div class="card-price">$421 <span style="font-size: 0.5em;">per person</span></div>
-                    <ul class="card-details">
-                        <li><strong>Outbound:</strong> Sat, Dec 27 • 7:10 PM - 10:41 PM (2h 31m)</li>
-                        <li><strong>Return:</strong> Wed, Dec 31 • 6:31 AM - 8:40 AM (3h 9m)</li>
-                        <li>Both flights nonstop</li>
-                        <li>Operated by SkyWest (United Express)</li>
-                        <li>Economy (includes Basic)</li>
-                    </ul>
-                    <a href="https://www.google.com/travel/flights?q=Flights%20to%20Albuquerque%20from%20San%20Francisco%20on%202025-12-27%20through%202025-12-31" target="_blank" class="btn">Book on Google Flights →</a>
+        <details class="section-collapsible" open>
+            <summary>✈️ Flights</summary>
+            <div class="section-content">
+                <div class="card-grid">
+                    <div class="card flight-card">
+                        <h3>United Airlines - Nonstop Round Trip</h3>
+                        <div class="card-price">$421 <span style="font-size: 0.5em;">per person</span></div>
+                        <ul class="card-details">
+                            <li><strong>Outbound:</strong> Sat, Dec 27 • 7:10 PM - 10:41 PM (2h 31m)</li>
+                            <li><strong>Return:</strong> Wed, Dec 31 • 6:31 AM - 8:40 AM (3h 9m)</li>
+                            <li>Both flights nonstop</li>
+                            <li>Operated by SkyWest (United Express)</li>
+                            <li>Economy (includes Basic)</li>
+                        </ul>
+                        <a href="https://www.google.com/travel/flights?q=Flights%20to%20Albuquerque%20from%20San%20Francisco%20on%202025-12-27%20through%202025-12-31" target="_blank" class="btn">Book on Google Flights →</a>
+                    </div>
                 </div>
             </div>
-        </div>
+        </details>
 
         <!-- Hotels Section -->
-        <div class="section">
-            <h2 class="section-title">🏨 Hotel Options</h2>
-
-            <h3 style="color: #4a5568; margin-top: 30px; margin-bottom: 15px;">Night 1: Friday, December 27 (Arriving 10:41 PM)</h3>
+        <details class="section-collapsible" open>
+            <summary>🏨 Hotel Options</summary>
+            <div class="section-content">
+                <h3 style="color: #4a5568; margin-top: 30px; margin-bottom: 15px;">Night 1: Friday, December 27 (Arriving 10:41 PM)</h3>
             <div class="card-grid">
                 <div class="card">
                     <span class="card-badge budget">Best Value</span>
@@ -642,76 +670,100 @@
                     <a href="https://www.google.com/travel/search?q=Comfort%20Suites%20Albuquerque%20Airport&ts=CAESABogCgIaABIaEhQKBwjpDxAMGBsSBwjpDxAMGB4YATICEAAqCQoFOgNVU0QaAA" target="_blank" class="btn btn-small">View on Google Hotels →</a>
                 </div>
             </div>
-        </div>
+            </div>
+        </details>
 
         <!-- Transportation Section -->
-        <div class="section">
-            <h2 class="section-title">🚗 Transportation: ABQ ↔ Santa Fe (65 miles, ~1h 15m)</h2>
-            <div class="transportation">
-                <div class="transport-option">
-                    <div class="transport-info">
-                        <h4>Rental Car (Recommended)</h4>
-                        <p>Free shuttles to rental center every 5 min • Full flexibility • ~1h 15m drive</p>
-                        <a href="https://www.abqsunport.com/ground-transportation/" target="_blank" class="btn btn-small" style="margin-top: 10px;">ABQ Rental Info →</a>
-                        <a href="https://www.kayak.com/cars/Albuquerque,NM-c14673/2025-12-27/2025-12-30" target="_blank" class="btn btn-small" style="margin-top: 10px; margin-left: 10px;">Compare Prices →</a>
-                    </div>
-                    <div class="transport-price">$40-80/day</div>
-                </div>
+        <details class="section-collapsible" open>
+            <summary>🚗 Transportation: ABQ ↔ Santa Fe</summary>
+            <div class="section-content">
+                <div style="background: linear-gradient(135deg, #48bb78 0%, #38a169 100%); color: white; padding: 20px; border-radius: 12px; margin-bottom: 20px;">
+                <h3 style="color: white; margin-bottom: 10px;">✅ Chosen Transportation Plan</h3>
+                <p style="font-size: 1.1em; line-height: 1.6;">
+                    <strong>Parents' vehicles available!</strong> Allison's parents are offering use of their vehicles during the trip.
+                    For getting to/from Santa Fe, the <strong>Rail Runner train</strong> is Allison's preferred option - a scenic and relaxing ride.
+                    ~$10 per person, may need Uber to/from train stations.
+                </p>
+            </div>
 
-                <div class="transport-option">
+            <div class="transportation">
+                <div class="transport-option" style="border: 3px solid #48bb78; background: #f0fff4;">
                     <div class="transport-info">
-                        <h4>🚆 New Mexico Rail Runner</h4>
-                        <p>Budget-friendly train service • ~1.5-2 hours • Limited weekend schedule • Requires transport from Santa Fe Depot</p>
+                        <h4>🚆 New Mexico Rail Runner (Preferred!)</h4>
+                        <p>Scenic train service • ~1.5-2 hours • Relaxing travel • May need Uber/Lyft to/from stations • Perfect for one leg of journey</p>
                         <a href="https://www.riometro.org/rail-runner" target="_blank" class="btn btn-small" style="margin-top: 10px;">Rail Runner Schedule →</a>
                     </div>
-                    <div class="transport-price">~$10/person</div>
+                    <div class="transport-price" style="color: #48bb78;">~$10/person</div>
+                </div>
+
+                <div class="transport-option" style="border: 3px solid #48bb78; background: #f0fff4;">
+                    <div class="transport-info">
+                        <h4>🚙 Parents' Vehicles (Available!)</h4>
+                        <p>Use Allison's parents' vehicles • Full flexibility in Santa Fe • No rental costs</p>
+                    </div>
+                    <div class="transport-price" style="color: #48bb78;">Free ✨</div>
                 </div>
 
                 <div class="transport-option">
                     <div class="transport-info">
-                        <h4>Uber/Lyft</h4>
-                        <p>Direct pickup from airport • No driving stress • One-way only</p>
+                        <h4>Uber/Lyft to Stations</h4>
+                        <p>For getting to/from Rail Runner stations • Complements train travel</p>
                         <a href="https://www.uber.com/global/en/cities/albuquerque/" target="_blank" class="btn btn-small" style="margin-top: 10px;">Uber Info →</a>
                     </div>
-                    <div class="transport-price">$90-150</div>
+                    <div class="transport-price">$15-30</div>
                 </div>
 
-                <div class="transport-option">
-                    <div class="transport-info">
-                        <h4>Private Car Service</h4>
-                        <p>Direct service • Minimal waiting • Professional driver</p>
-                        <a href="https://newmexicoblackcar.com/services" target="_blank" class="btn btn-small" style="margin-top: 10px;">NM Black Car →</a>
-                    </div>
-                    <div class="transport-price">$120-180</div>
-                </div>
+                <details style="margin-top: 15px;">
+                    <summary>Show other transportation options (for reference)</summary>
+                    <div style="margin-top: 15px; display: grid; gap: 15px;">
+                        <div class="transport-option">
+                            <div class="transport-info">
+                                <h4>Rental Car</h4>
+                                <p>Free shuttles to rental center every 5 min • Full flexibility • ~1h 15m drive</p>
+                                <a href="https://www.abqsunport.com/ground-transportation/" target="_blank" class="btn btn-small" style="margin-top: 10px;">ABQ Rental Info →</a>
+                            </div>
+                            <div class="transport-price">$40-80/day</div>
+                        </div>
 
-                <div class="transport-option">
-                    <div class="transport-info">
-                        <h4>Shuttle Service (Limited)</h4>
-                        <p>Taos Rides (575-613-3256) or RoadRunner (505-424-3367) • Book in advance</p>
-                    </div>
-                    <div class="transport-price">~$36-50</div>
-                </div>
+                        <div class="transport-option">
+                            <div class="transport-info">
+                                <h4>Uber/Lyft Full Trip</h4>
+                                <p>Direct pickup from airport • No driving stress • One-way only</p>
+                            </div>
+                            <div class="transport-price">$90-150</div>
+                        </div>
 
-                <div class="transport-option" style="border: 2px dashed #f6ad55; background: #fffaf0;">
-                    <div class="transport-info">
-                        <h4>Allison's Parents 😅</h4>
-                        <p>Direct pickup from ABQ • Ultimate short term convenience • Emotional complexity not included</p>
+                        <div class="transport-option">
+                            <div class="transport-info">
+                                <h4>Private Car Service</h4>
+                                <p>Direct service • Minimal waiting • Professional driver</p>
+                                <a href="https://newmexicoblackcar.com/services" target="_blank" class="btn btn-small" style="margin-top: 10px;">NM Black Car →</a>
+                            </div>
+                            <div class="transport-price">$120-180</div>
+                        </div>
                     </div>
-                    <div class="transport-price" style="color: #c05621;">Free*</div>
-                </div>
+                </details>
             </div>
-            <p style="margin-top: 15px; color: #c05621; font-style: italic; font-size: 0.9em;">
-                * Cost: Lifetime of guilt and ongoing therapy costs for Allison (not shared cost but shared burden)
-            </p>
-            <p style="margin-top: 5px; color: #718096; font-style: italic;">
+            <p style="margin-top: 15px; color: #718096; font-style: italic;">
                 Note: Groome Transportation (formerly Sandia Shuttle) closed Santa Fe operations in Nov 2025.
             </p>
-        </div>
+            </div>
+        </details>
 
         <!-- Sample Itinerary -->
-        <div class="section">
-            <h2 class="section-title">📅 Sample Itinerary</h2>
+        <details class="section-collapsible" open>
+            <summary>📅 Sample Itinerary</summary>
+            <div class="section-content">
+                <div style="background: #e6f7ff; border: 2px solid #1890ff; border-radius: 12px; padding: 20px; margin-bottom: 20px;">
+                <h3 style="color: #0050b3; margin-bottom: 10px;">📝 Important Notes About This Trip</h3>
+                <ul style="color: #4a5568; line-height: 1.8; list-style: none; padding-left: 0;">
+                    <li style="margin-bottom: 8px;">🚶 <strong>Parents' Mobility:</strong> Allison's parents aren't super mobile and likely won't join most activities. Time together will mostly be at their house.</li>
+                    <li style="margin-bottom: 8px;">🎨 <strong>Solo Exploration:</strong> Activities like Georgia O'Keeffe Museum, Canyon Road, Meow Wolf, downtown will be just you two.</li>
+                    <li style="margin-bottom: 8px;">🍽️ <strong>Special Birthday Dinner:</strong> Parents treating to an amazing mole restaurant - one of the best in Santa Fe!</li>
+                    <li style="margin-bottom: 8px;">👋 <strong>See Landon:</strong> Friend in Albuquerque - options for breakfast or dinner visit.</li>
+                </ul>
+            </div>
+
             <div class="itinerary">
                 <div class="itinerary-day">
                     <h4>Friday, December 27</h4>
@@ -736,11 +788,12 @@
                     <div class="itinerary-day" style="background: white; margin-top: 10px;">
                         <h4>Saturday, December 28</h4>
                         <ul>
-                            <li>8:00 AM - Hotel breakfast & checkout</li>
-                            <li>9:00 AM - Pick up rental car or arrange transport</li>
-                            <li>10:30 AM - Arrive Santa Fe</li>
-                            <li>Settle in at/near Allison's parents</li>
-                            <li>Explore Santa Fe Plaza, galleries, restaurants</li>
+                            <li><strong>Option A:</strong> 8:00 AM - Breakfast with Landon in Albuquerque</li>
+                            <li>9:30 AM - Hotel checkout</li>
+                            <li>10:00 AM - Take Rail Runner train to Santa Fe OR parents pick up</li>
+                            <li>~12:00 PM - Arrive Santa Fe</li>
+                            <li>Settle in at Allison's parents' place</li>
+                            <li>Afternoon/evening: Explore Santa Fe Plaza, galleries, restaurants (just you two!)</li>
                         </ul>
                     </div>
 
@@ -748,11 +801,11 @@
                         <h4>🎂 Sunday, December 29 - BIRTHDAY CELEBRATION!</h4>
                         <ul>
                             <li><strong>🎉 Allison's Dad & Brother's Birthday!</strong></li>
-                            <li>Morning: Brunch or special breakfast</li>
-                            <li>Birthday celebration activities</li>
-                            <li>Family time & presents</li>
-                            <li>Enjoy the full day in Santa Fe!</li>
-                            <li>Evening: Dinner with family</li>
+                            <li>Morning: Relaxed time at parents' house</li>
+                            <li>Daytime: Could explore on your own (Meow Wolf, Georgia O'Keeffe, Canyon Road)</li>
+                            <li>Evening: <strong>🌶️ Special Birthday Dinner at Sazon Mexican Restaurant</strong></li>
+                            <li style="padding-left: 25px; font-style: italic; color: white;">Parents treating to an incredible experience - different moles from Mexico, one of the best restaurants in Santa Fe!</li>
+                            <li>Birthday celebration with family</li>
                             <li>Stay in Santa Fe overnight</li>
                         </ul>
                     </div>
@@ -760,12 +813,13 @@
                     <div class="itinerary-day" style="background: white;">
                         <h4>Monday, December 30</h4>
                         <ul>
-                            <li>Morning: Final Santa Fe time</li>
-                            <li>Lunch with family</li>
-                            <li>Pack up and say goodbyes</li>
-                            <li>6:00 PM - Drive back to ABQ (1h 15m)</li>
+                            <li>Morning: Final Santa Fe exploration time (on your own)</li>
+                            <li>Afternoon: Time with parents at their house</li>
+                            <li><strong>Option B:</strong> Evening - Dinner with Landon in Albuquerque before early flight</li>
+                            <li>Pack up and say goodbyes to parents</li>
+                            <li>~6:00 PM - Drive/Rail Runner back to ABQ (1h 15m)</li>
                             <li>7:30 PM - Check into airport hotel</li>
-                            <li>Dinner nearby & early to bed</li>
+                            <li>Early to bed for 6:31 AM flight!</li>
                         </ul>
                     </div>
                 </div>
@@ -783,13 +837,22 @@
                     </ul>
                 </div>
             </div>
-        </div>
+
+            <div style="background: #fff3cd; border: 2px solid #ffc107; border-radius: 12px; padding: 20px; margin-top: 20px;">
+                <h3 style="color: #856404; margin-bottom: 10px;">💡 Consider: Arriving December 26 Instead?</h3>
+                <p style="color: #856404; line-height: 1.6;">
+                    Allison mentioned flights on Dec 26 are still about the same price. This would give you an extra full day in Santa Fe
+                    for exploring museums, galleries, and activities on your own before the family celebrations begin. Worth checking!
+                </p>
+            </div>
+            </div>
+        </details>
 
         <!-- Things to Do Section -->
-        <div class="section">
-            <h2 class="section-title">🎨 Things to Do in Santa Fe</h2>
-
-            <!-- Outdoor Adventures -->
+        <details class="section-collapsible">
+            <summary>🎨 Things to Do in Santa Fe</summary>
+            <div class="section-content">
+                <!-- Outdoor Adventures -->
             <h3 style="color: #667eea; font-size: 1.4em; margin-top: 30px; margin-bottom: 15px; display: flex; align-items: center;">
                 ⛷️ Outdoor Adventures
             </h3>
@@ -878,13 +941,14 @@
                     <a href="https://santafebotanicalgarden.org/" target="_blank" class="btn btn-small">Get Info →</a>
                 </div>
             </div>
-        </div>
+            </div>
+        </details>
 
         <!-- Cost Summary -->
-        <div class="section">
-            <h2 class="section-title">💰 Trip Cost Estimates (Per Person - Couple)</h2>
-
-            <table class="comparison-table">
+        <details class="section-collapsible" open>
+            <summary>💰 Trip Cost Estimates</summary>
+            <div class="section-content">
+                <table class="comparison-table">
                 <thead>
                     <tr>
                         <th>Cost Item</th>
@@ -920,9 +984,9 @@
                     </tr>
                     <tr>
                         <td>ABQ ↔ Santa Fe</td>
-                        <td style="text-align: center;">$0<br><small>Parents driving*</small></td>
-                        <td style="text-align: center;">$75<br><small>Rental car split</small></td>
-                        <td style="text-align: center;">$75<br><small>Rental car split</small></td>
+                        <td style="text-align: center;">$25<br><small>Rail Runner + Uber</small></td>
+                        <td style="text-align: center;">$30<br><small>Rail Runner + Uber</small></td>
+                        <td style="text-align: center;">$30<br><small>Rail Runner + Uber</small></td>
                     </tr>
                     <tr>
                         <td>Dinners Dec 27 & 30</td>
@@ -932,15 +996,15 @@
                     </tr>
                     <tr class="total-row">
                         <td>TOTAL PER PERSON</td>
-                        <td class="price budget-col">$572.50</td>
-                        <td class="price recommended-col">$676</td>
-                        <td class="price premium-col">$737.50</td>
+                        <td class="price budget-col">$597.50</td>
+                        <td class="price recommended-col">$631</td>
+                        <td class="price premium-col">$692.50</td>
                     </tr>
                 </tbody>
             </table>
 
             <p style="text-align: center; color: #718096; margin-top: 10px;">
-                💑 All hotel and car costs are split between two people
+                💑 All hotel costs split between two people • 🚙 Parents' vehicles available in Santa Fe
             </p>
 
             <h3 style="color: #4a5568; margin-top: 40px; margin-bottom: 15px;">Detailed Breakdowns</h3>
@@ -964,8 +1028,8 @@
                     <span>$37.50</span>
                 </div>
                 <div class="cost-row">
-                    <span>Transportation (Allison's parents driving)</span>
-                    <span>$0*</span>
+                    <span>ABQ ↔ Santa Fe (Rail Runner + Uber to/from stations)</span>
+                    <span>$25</span>
                 </div>
                 <div class="cost-row">
                     <span>Dinners Dec 27 & 30 (2 @ $25)</span>
@@ -973,11 +1037,11 @@
                 </div>
                 <div class="cost-total cost-row" style="color: #0050b3;">
                     <span>TOTAL PER PERSON (Couple)</span>
-                    <span>$572.50</span>
+                    <span>$597.50</span>
                 </div>
                 <p style="margin-top: 10px; font-size: 0.9em; color: #0050b3;">
                     💑 Hotel costs split between two people<br>
-                    * See "Allison's Parents" transportation option for emotional cost details
+                    🚙 Parents' vehicles available for use in Santa Fe
                 </p>
                 <details>
                     <summary>Show solo traveler pricing (for comparison)</summary>
@@ -999,8 +1063,8 @@
                             <span>$75</span>
                         </div>
                         <div class="cost-row">
-                            <span>Transportation (Parents driving)</span>
-                            <span>$0*</span>
+                            <span>ABQ ↔ Santa Fe (Rail Runner + Uber)</span>
+                            <span>$25</span>
                         </div>
                         <div class="cost-row">
                             <span>Dinners Dec 27 & 30 (2 @ $25)</span>
@@ -1008,7 +1072,7 @@
                         </div>
                         <div class="cost-total cost-row">
                             <span>TOTAL (Solo)</span>
-                            <span>$653</span>
+                            <span>$678</span>
                         </div>
                     </div>
                 </details>
@@ -1033,8 +1097,8 @@
                     <span>$43</span>
                 </div>
                 <div class="cost-row">
-                    <span>Rental Car (3 days @ $50/day) - split</span>
-                    <span>$75</span>
+                    <span>ABQ ↔ Santa Fe (Rail Runner + Uber to/from stations)</span>
+                    <span>$30</span>
                 </div>
                 <div class="cost-row">
                     <span>Dinners Dec 27 & 30 (2 @ $30)</span>
@@ -1042,10 +1106,11 @@
                 </div>
                 <div class="cost-total cost-row" style="color: #0050b3;">
                     <span>TOTAL PER PERSON (Couple)</span>
-                    <span>$676</span>
+                    <span>$631</span>
                 </div>
                 <p style="margin-top: 10px; font-size: 0.9em; color: #0050b3;">
-                    💑 Hotels & car costs split between two people
+                    💑 Hotel costs split between two people<br>
+                    🚙 Parents' vehicles available for use in Santa Fe
                 </p>
                 <details>
                     <summary>Show solo traveler pricing (for comparison)</summary>
@@ -1067,8 +1132,8 @@
                             <span>$86</span>
                         </div>
                         <div class="cost-row">
-                            <span>Rental Car (3 days)</span>
-                            <span>$150</span>
+                            <span>ABQ ↔ Santa Fe (Rail Runner + Uber)</span>
+                            <span>$30</span>
                         </div>
                         <div class="cost-row">
                             <span>Dinners Dec 27 & 30 (2 @ $30)</span>
@@ -1076,7 +1141,7 @@
                         </div>
                         <div class="cost-total cost-row">
                             <span>TOTAL (Solo)</span>
-                            <span>$850</span>
+                            <span>$730</span>
                         </div>
                     </div>
                 </details>
@@ -1101,8 +1166,8 @@
                     <span>$60.50</span>
                 </div>
                 <div class="cost-row">
-                    <span>Rental Car (3 days @ $50/day) - split</span>
-                    <span>$75</span>
+                    <span>ABQ ↔ Santa Fe (Rail Runner + Uber to/from stations)</span>
+                    <span>$30</span>
                 </div>
                 <div class="cost-row">
                     <span>Dinners Dec 27 & 30 (2 @ $35)</span>
@@ -1110,10 +1175,11 @@
                 </div>
                 <div class="cost-total cost-row" style="color: #0050b3;">
                     <span>TOTAL PER PERSON (Couple)</span>
-                    <span>$737.50</span>
+                    <span>$692.50</span>
                 </div>
-                <p style="margin-top: 10px; font-size: 0.9em; color: #234e52;">
-                    💎 Premium comfort with Uber airport service + Hotels & car costs split
+                <p style="margin-top: 10px; font-size: 0.9em; color: #0050b3;">
+                    💎 Premium comfort with Uber airport service<br>
+                    💑 Hotel costs split • 🚙 Parents' vehicles available in Santa Fe
                 </p>
                 <details>
                     <summary>Show solo traveler pricing (for comparison)</summary>
@@ -1135,8 +1201,8 @@
                             <span>$121</span>
                         </div>
                         <div class="cost-row">
-                            <span>Rental Car (3 days)</span>
-                            <span>$150</span>
+                            <span>ABQ ↔ Santa Fe (Rail Runner + Uber)</span>
+                            <span>$30</span>
                         </div>
                         <div class="cost-row">
                             <span>Dinners Dec 27 & 30 (2 @ $35)</span>
@@ -1144,12 +1210,13 @@
                         </div>
                         <div class="cost-total cost-row" style="color: #234e52;">
                             <span>TOTAL (Solo)</span>
-                            <span>$984</span>
+                            <span>$864</span>
                         </div>
                     </div>
                 </details>
             </div>
-        </div>
+            </div>
+        </details>
 
         <div style="text-align: center; margin-top: 40px; color: #718096;">
             <p>Created with Google Flights MCP & SerpAPI • December 2025</p>
