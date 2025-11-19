@@ -352,6 +352,81 @@
             border-bottom: none;
         }
 
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .comparison-table thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .comparison-table th {
+            color: white;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .comparison-table th:first-child {
+            text-align: left;
+        }
+
+        .comparison-table tbody tr:hover {
+            background: #f7fafc;
+        }
+
+        .comparison-table .price {
+            font-weight: 700;
+            font-size: 1.3em;
+            text-align: center;
+        }
+
+        .comparison-table .budget-col {
+            color: #48bb78;
+        }
+
+        .comparison-table .recommended-col {
+            color: #667eea;
+        }
+
+        .comparison-table .premium-col {
+            color: #ed8936;
+        }
+
+        .comparison-table .total-row {
+            background: #edf2f7;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .comparison-table .total-row td {
+            border-bottom: none;
+            padding: 20px 16px;
+        }
+
+        @media (max-width: 768px) {
+            .comparison-table {
+                font-size: 0.9em;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 10px;
+            }
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 20px;
@@ -686,6 +761,67 @@
         <!-- Cost Summary -->
         <div class="section">
             <h2 class="section-title">💰 Trip Cost Estimates (Per Person - Couple)</h2>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Cost Item</th>
+                        <th>Budget</th>
+                        <th>Recommended</th>
+                        <th>Premium</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Flights (round trip)</td>
+                        <td style="text-align: center;">$421</td>
+                        <td style="text-align: center;">$421</td>
+                        <td style="text-align: center;">$421</td>
+                    </tr>
+                    <tr>
+                        <td>BART to/from SFO</td>
+                        <td style="text-align: center;">$21</td>
+                        <td style="text-align: center;">$21</td>
+                        <td style="text-align: center;">$21</td>
+                    </tr>
+                    <tr>
+                        <td>Hotel Dec 27 (split)</td>
+                        <td style="text-align: center;">$43<br><small>La Quinta</small></td>
+                        <td style="text-align: center;">$56<br><small>Hampton Inn</small></td>
+                        <td style="text-align: center;">$56<br><small>Hampton Inn</small></td>
+                    </tr>
+                    <tr>
+                        <td>Hotel Dec 30 (split)</td>
+                        <td style="text-align: center;">$37.50<br><small>La Quinta</small></td>
+                        <td style="text-align: center;">$43<br><small>Holiday Inn Express</small></td>
+                        <td style="text-align: center;">$60.50<br><small>Comfort Suites 4.9★</small></td>
+                    </tr>
+                    <tr>
+                        <td>Rental Car (3 days, split)</td>
+                        <td style="text-align: center;">$75</td>
+                        <td style="text-align: center;">$75</td>
+                        <td style="text-align: center;">$75</td>
+                    </tr>
+                    <tr>
+                        <td>Dinners Dec 27 & 30</td>
+                        <td style="text-align: center;">$50<br><small>2 @ $25</small></td>
+                        <td style="text-align: center;">$60<br><small>2 @ $30</small></td>
+                        <td style="text-align: center;">$70<br><small>2 @ $35</small></td>
+                    </tr>
+                    <tr class="total-row">
+                        <td>TOTAL PER PERSON</td>
+                        <td class="price budget-col">$647.50</td>
+                        <td class="price recommended-col">$676</td>
+                        <td class="price premium-col">$703.50</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p style="text-align: center; color: #718096; margin-top: 10px;">
+                💑 All hotel and car costs are split between two people
+            </p>
+
+            <h3 style="color: #4a5568; margin-top: 40px; margin-bottom: 15px;">Detailed Breakdowns</h3>
 
             <div class="cost-summary" style="background: #e6f7ff; border-color: #1890ff;">
                 <h3 style="color: #0050b3;">Budget Option - Per Person (Couple)</h3>
