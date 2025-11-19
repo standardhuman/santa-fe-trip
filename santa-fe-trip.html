@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santa Fe Trip Planning - Dec 27-31, 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            color: #2d3748;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: #f7fafc;
+            border-radius: 15px;
+            padding: 25px;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #48bb78;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .card-badge.budget {
+            background: #48bb78;
+        }
+
+        .card-badge.recommended {
+            background: #667eea;
+        }
+
+        .card-badge.premium {
+            background: #ed8936;
+        }
+
+        .card h3 {
+            color: #2d3748;
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+
+        .card-price {
+            font-size: 2em;
+            color: #667eea;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .card-rating {
+            color: #f6ad55;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .card-details {
+            color: #4a5568;
+            line-height: 1.8;
+            margin-top: 15px;
+        }
+
+        .card-details li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .card-details li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #48bb78;
+            font-weight: bold;
+        }
+
+        .flight-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            grid-column: 1 / -1;
+        }
+
+        .flight-card h3,
+        .flight-card .card-details {
+            color: white;
+        }
+
+        .flight-card .card-price {
+            color: #fbbf24;
+        }
+
+        .itinerary {
+            background: #edf2f7;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .itinerary-day {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+        }
+
+        .itinerary-day h4 {
+            color: #667eea;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .itinerary-day ul {
+            list-style: none;
+            color: #4a5568;
+            line-height: 1.8;
+        }
+
+        .cost-summary {
+            background: #fef5e7;
+            border: 3px solid #f6ad55;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        .cost-summary h3 {
+            color: #c05621;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .cost-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #f6ad55;
+        }
+
+        .cost-total {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #c05621;
+            margin-top: 15px;
+        }
+
+        .transportation {
+            display: grid;
+            gap: 15px;
+        }
+
+        .transport-option {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .transport-option:hover {
+            border-color: #667eea;
+        }
+
+        .transport-info h4 {
+            color: #2d3748;
+            margin-bottom: 5px;
+        }
+
+        .transport-info p {
+            color: #718096;
+        }
+
+        .transport-price {
+            font-size: 1.5em;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎄 Santa Fe Holiday Trip</h1>
+        <p class="subtitle">December 27-31, 2025 • Trip Planning Options</p>
+
+        <!-- Flights Section -->
+        <div class="section">
+            <h2 class="section-title">✈️ Flights</h2>
+            <div class="card-grid">
+                <div class="card flight-card">
+                    <h3>United Airlines - Nonstop Round Trip</h3>
+                    <div class="card-price">$421 total</div>
+                    <ul class="card-details">
+                        <li><strong>Outbound:</strong> Sat, Dec 27 • 7:10 PM - 10:41 PM (2h 31m)</li>
+                        <li><strong>Return:</strong> Wed, Dec 31 • 6:31 AM - 8:40 AM (3h 9m)</li>
+                        <li>Both flights nonstop</li>
+                        <li>Operated by SkyWest (United Express)</li>
+                        <li>Economy (includes Basic)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hotels Section -->
+        <div class="section">
+            <h2 class="section-title">🏨 Hotel Options</h2>
+
+            <h3 style="color: #4a5568; margin-top: 30px; margin-bottom: 15px;">Night 1: Friday, December 27 (Arriving 10:41 PM)</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <span class="card-badge budget">Best Value</span>
+                    <h3>La Quinta Inn Airport</h3>
+                    <div class="card-rating">★★★☆ 3.4 (1,407 reviews)</div>
+                    <div class="card-price">$86<span style="font-size: 0.5em;">/night</span></div>
+                    <ul class="card-details">
+                        <li>Free breakfast</li>
+                        <li>Free airport shuttle</li>
+                        <li>Outdoor pool & hot tub</li>
+                        <li>Free parking</li>
+                        <li>24/7 fitness center</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Best Western Airport</h3>
+                    <div class="card-rating">★★★★☆ 4.1 (2,133 reviews)</div>
+                    <div class="card-price">$100<span style="font-size: 0.5em;">/night</span></div>
+                    <ul class="card-details">
+                        <li>Free breakfast</li>
+                        <li>Free airport shuttle</li>
+                        <li>Outdoor pool & hot tub</li>
+                        <li>On-site restaurant</li>
+                        <li>Room service available</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <span class="card-badge recommended">Highest Rated</span>
+                    <h3>Hampton Inn & Suites</h3>
+                    <div class="card-rating">★★★★☆ 4.4 (1,073 reviews)</div>
+                    <div class="card-price">$112<span style="font-size: 0.5em;">/night</span></div>
+                    <ul class="card-details">
+                        <li>Free breakfast</li>
+                        <li>Free airport shuttle</li>
+                        <li>Indoor pool & hot tub</li>
+                        <li>Modern fitness center</li>
+                        <li>Free parking</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 style="color: #4a5568; margin-top: 40px; margin-bottom: 15px;">Night 2: Monday, December 30 (Early 6:31 AM Flight)</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <span class="card-badge budget">Best Value</span>
+                    <h3>La Quinta Inn Airport</h3>
+                    <div class="card-rating">★★★☆ 3.4 (1,407 reviews)</div>
+                    <div class="card-price">$75<span style="font-size: 0.5em;">/night</span></div>
+                    <ul class="card-details">
+                        <li>Free breakfast</li>
+                        <li>Free airport shuttle</li>
+                        <li>Easy early morning access</li>
+                        <li>Free parking</li>
+                        <li>Pet-friendly</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <span class="card-badge recommended">Recommended</span>
+                    <h3>Holiday Inn Express</h3>
+                    <div class="card-rating">★★★★☆ 4.3 (799 reviews)</div>
+                    <div class="card-price">$86<span style="font-size: 0.5em;">/night</span></div>
+                    <ul class="card-details">
+                        <li>Free breakfast</li>
+                        <li>Free airport shuttle</li>
+                        <li>Indoor pool</li>
+                        <li>Modern rooms</li>
+                        <li>Excellent service</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <span class="card-badge premium">Top Rated</span>
+                    <h3>Comfort Suites Airport</h3>
+                    <div class="card-rating">★★★★★ 4.9 (2,576 reviews)</div>
+                    <div class="card-price">$121<span style="font-size: 0.5em;">/night</span></div>
+                    <ul class="card-details">
+                        <li>Free breakfast</li>
+                        <li>Free airport shuttle</li>
+                        <li>Indoor pool & hot tub</li>
+                        <li>Exceptional cleanliness</li>
+                        <li>Premium comfort</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Transportation Section -->
+        <div class="section">
+            <h2 class="section-title">🚗 Transportation: ABQ ↔ Santa Fe (65 miles, ~1h 15m)</h2>
+            <div class="transportation">
+                <div class="transport-option">
+                    <div class="transport-info">
+                        <h4>Rental Car</h4>
+                        <p>Free shuttles to rental center every 5 min • Full flexibility • ~1h 15m drive</p>
+                    </div>
+                    <div class="transport-price">$40-80/day</div>
+                </div>
+
+                <div class="transport-option">
+                    <div class="transport-info">
+                        <h4>Uber/Lyft</h4>
+                        <p>Direct pickup from airport • No driving stress • One-way only</p>
+                    </div>
+                    <div class="transport-price">$90-150</div>
+                </div>
+
+                <div class="transport-option">
+                    <div class="transport-info">
+                        <h4>Private Car Service</h4>
+                        <p>Direct service • Minimal waiting • Professional driver</p>
+                    </div>
+                    <div class="transport-price">$120-180</div>
+                </div>
+
+                <div class="transport-option">
+                    <div class="transport-info">
+                        <h4>Shuttle Service (Limited)</h4>
+                        <p>Taos Rides or RoadRunner • Shared service • Book in advance</p>
+                    </div>
+                    <div class="transport-price">~$36-50</div>
+                </div>
+            </div>
+            <p style="margin-top: 15px; color: #718096; font-style: italic;">
+                Note: Groome Transportation (formerly Sandia Shuttle) closed Santa Fe operations in Nov 2025.
+            </p>
+        </div>
+
+        <!-- Sample Itinerary -->
+        <div class="section">
+            <h2 class="section-title">📅 Sample Itinerary</h2>
+            <div class="itinerary">
+                <div class="itinerary-day">
+                    <h4>Friday, December 27</h4>
+                    <ul>
+                        <li>5:00 PM - Leave for SFO</li>
+                        <li>7:10 PM - Depart SFO on United</li>
+                        <li>10:41 PM - Arrive ABQ</li>
+                        <li>11:00 PM - Check into airport hotel</li>
+                        <li>Get a good night's sleep!</li>
+                    </ul>
+                </div>
+
+                <div class="itinerary-day">
+                    <h4>Saturday, December 28</h4>
+                    <ul>
+                        <li>8:00 AM - Hotel breakfast & checkout</li>
+                        <li>9:00 AM - Pick up rental car or arrange transport</li>
+                        <li>10:30 AM - Arrive Santa Fe</li>
+                        <li>Settle in at/near Allison's parents</li>
+                        <li>Explore Santa Fe Plaza, galleries, restaurants</li>
+                    </ul>
+                </div>
+
+                <div class="itinerary-day">
+                    <h4>Sunday, December 29</h4>
+                    <ul>
+                        <li>Full day in Santa Fe</li>
+                        <li>Visit Meow Wolf, museums, or hiking</li>
+                        <li>6:00 PM - Drive back to ABQ (1h 15m)</li>
+                        <li>7:30 PM - Check into airport hotel</li>
+                        <li>Dinner nearby & early to bed</li>
+                    </ul>
+                </div>
+
+                <div class="itinerary-day">
+                    <h4>Monday, December 30</h4>
+                    <ul>
+                        <li>5:00 AM - Wake up (at airport - no drive!)</li>
+                        <li>5:45 AM - Hotel shuttle to terminal</li>
+                        <li>6:31 AM - Depart ABQ on United</li>
+                        <li>8:40 AM - Arrive SFO</li>
+                        <li>9:30 AM - Home by mid-morning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cost Summary -->
+        <div class="section">
+            <h2 class="section-title">💰 Trip Cost Estimates</h2>
+
+            <div class="cost-summary">
+                <h3>Budget Option</h3>
+                <div class="cost-row">
+                    <span>Flights (both ways)</span>
+                    <span>$421</span>
+                </div>
+                <div class="cost-row">
+                    <span>Hotel Dec 27 (La Quinta)</span>
+                    <span>$86</span>
+                </div>
+                <div class="cost-row">
+                    <span>Hotel Dec 30 (La Quinta)</span>
+                    <span>$75</span>
+                </div>
+                <div class="cost-row">
+                    <span>Rental Car (3 days @ $50/day)</span>
+                    <span>$150</span>
+                </div>
+                <div class="cost-total cost-row">
+                    <span>TOTAL</span>
+                    <span>$732</span>
+                </div>
+            </div>
+
+            <div class="cost-summary" style="margin-top: 20px;">
+                <h3>Recommended Option</h3>
+                <div class="cost-row">
+                    <span>Flights (both ways)</span>
+                    <span>$421</span>
+                </div>
+                <div class="cost-row">
+                    <span>Hotel Dec 27 (Hampton Inn)</span>
+                    <span>$112</span>
+                </div>
+                <div class="cost-row">
+                    <span>Hotel Dec 30 (Holiday Inn Express)</span>
+                    <span>$86</span>
+                </div>
+                <div class="cost-row">
+                    <span>Rental Car (3 days @ $50/day)</span>
+                    <span>$150</span>
+                </div>
+                <div class="cost-total cost-row">
+                    <span>TOTAL</span>
+                    <span>$769</span>
+                </div>
+            </div>
+
+            <div class="cost-summary" style="margin-top: 20px; background: #e6fffa; border-color: #38b2ac;">
+                <h3 style="color: #234e52;">Premium Option</h3>
+                <div class="cost-row">
+                    <span>Flights (both ways)</span>
+                    <span>$421</span>
+                </div>
+                <div class="cost-row">
+                    <span>Hotel Dec 27 (Hampton Inn)</span>
+                    <span>$112</span>
+                </div>
+                <div class="cost-row">
+                    <span>Hotel Dec 30 (Comfort Suites 4.9★)</span>
+                    <span>$121</span>
+                </div>
+                <div class="cost-row">
+                    <span>Rental Car (3 days @ $50/day)</span>
+                    <span>$150</span>
+                </div>
+                <div class="cost-total cost-row" style="color: #234e52;">
+                    <span>TOTAL</span>
+                    <span>$804</span>
+                </div>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #234e52;">
+                    💎 Extra comfort before early flight - worth it!
+                </p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; color: #718096;">
+            <p>Created with Google Flights MCP & SerpAPI • December 2025</p>
+        </div>
+    </div>
+</body>
+</html>
