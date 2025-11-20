@@ -633,9 +633,10 @@
         </div>
 
         <!-- Flights Section -->
-        <div class="section">
-            <h2 class="section-title">✈️ Flights - BOOKED!</h2>
-            <div class="card-grid">
+        <details class="section-collapsible" open>
+            <summary>✈️ Flights - BOOKED!</summary>
+            <div class="section-content">
+                <div class="card-grid">
                 <div class="card flight-card">
                     <h3>✅ United Airlines - Confirmed Booking</h3>
                     <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px; margin: 15px 0;">
@@ -677,17 +678,19 @@
                         <div style="margin-left: 10px;">• Allison Pierce (eTicket: 0162350132744)</div>
                     </div>
 
-                    <div style="margin-top: 20px;">
+                    <div style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px;">
                         <a href="https://www.united.com/en/us/mytrips" target="_blank" class="btn">Manage Booking on United.com →</a>
                         <button onclick="shareFlightDetails()" class="btn-share">📋 Share Flight Details</button>
                     </div>
                 </div>
             </div>
-        </div>
+            </div>
+        </details>
 
         <!-- Hotels Section -->
-        <div class="section">
-            <h2 class="section-title">🏨 Hotel Options</h2>
+        <details class="section-collapsible">
+            <summary>🏨 Hotel Options</summary>
+            <div class="section-content">
 
             <!--
             ============================================================
