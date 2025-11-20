@@ -510,6 +510,79 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Share Button Styles */
+        .btn-share {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #48bb78;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+            margin-left: 10px;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1em;
+        }
+
+        .btn-share:hover {
+            background: #38a169;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(72, 187, 120, 0.3);
+        }
+
+        .btn-share:active {
+            transform: translateY(0);
+        }
+
+        /* Share notification */
+        .share-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #48bb78;
+            color: white;
+            padding: 16px 24px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: none;
+            z-index: 1000;
+            animation: slideIn 0.3s ease;
+        }
+
+        .share-notification.show {
+            display: block;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .share-notification.hide {
+            animation: slideOut 0.3s ease forwards;
+        }
+
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -521,25 +594,67 @@
         <div class="trip-overview">
             <h2>✨ Trip Overview</h2>
             <p style="font-size: 1.1em; line-height: 1.8; color: white; margin-top: 20px;">
-                A 5-day holiday getaway to Santa Fe, New Mexico from December 27-31, 2025. Fly direct from San Francisco on United Airlines, arriving late Friday evening and returning Tuesday morning on New Year's Eve. The trip centers around a special birthday celebration on December 29 for Allison's dad and brother, with three full days in Santa Fe for winter activities like skiing at Ski Santa Fe, exploring iconic cultural destinations like Meow Wolf and the Georgia O'Keeffe Museum, and enjoying the festive atmosphere of Canyon Road galleries and the Botanical Garden's holiday light show. Smart logistics include staying at Albuquerque airport hotels on arrival and departure nights to avoid early morning drives, with a rental car providing flexibility to explore the Santa Fe National Forest and surrounding areas. Trip costs range from $647-$704 per person for couples, split across budget, recommended, and premium tiers.
+                A 5-day holiday getaway to Santa Fe, New Mexico from December 27-31, 2025. Fly direct from San Francisco on United Airlines, arriving late Friday evening and returning Tuesday morning on New Year's Eve.
             </p>
+            <details style="margin-top: 15px;">
+                <summary style="cursor: pointer; color: #fbbf24; font-weight: 600; list-style: none; user-select: none;">
+                    ▸ Read more...
+                </summary>
+                <p style="font-size: 1.1em; line-height: 1.8; color: white; margin-top: 15px;">
+                    The trip centers around a special birthday celebration on December 29 for Allison's dad and brother, with three full days in Santa Fe for winter activities like skiing at Ski Santa Fe, exploring iconic cultural destinations like Meow Wolf and the Georgia O'Keeffe Museum, and enjoying the festive atmosphere of Canyon Road galleries and the Botanical Garden's holiday light show. Smart logistics include staying at Albuquerque airport hotels on arrival and departure nights to avoid early morning drives, with a rental car providing flexibility to explore the Santa Fe National Forest and surrounding areas. Trip costs range from $647-$704 per person for couples, split across budget, recommended, and premium tiers.
+                </p>
+            </details>
         </div>
 
         <!-- Flights Section -->
         <div class="section">
-            <h2 class="section-title">✈️ Flights</h2>
+            <h2 class="section-title">✈️ Flights - BOOKED!</h2>
             <div class="card-grid">
                 <div class="card flight-card">
-                    <h3>United Airlines - Nonstop Round Trip</h3>
-                    <div class="card-price">$421 <span style="font-size: 0.5em;">per person</span></div>
-                    <ul class="card-details">
-                        <li><strong>Outbound:</strong> Sat, Dec 27 • 7:10 PM - 10:41 PM (2h 31m)</li>
-                        <li><strong>Return:</strong> Wed, Dec 31 • 6:31 AM - 8:40 AM (3h 9m)</li>
-                        <li>Both flights nonstop</li>
-                        <li>Operated by SkyWest (United Express)</li>
-                        <li>Economy (includes Basic)</li>
-                    </ul>
-                    <a href="https://www.google.com/travel/flights?q=Flights%20to%20Albuquerque%20from%20San%20Francisco%20on%202025-12-27%20through%202025-12-31" target="_blank" class="btn">Book on Google Flights →</a>
+                    <h3>✅ United Airlines - Confirmed Booking</h3>
+                    <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px; margin: 15px 0;">
+                        <div style="font-size: 0.9em; margin-bottom: 5px;">Confirmation Number</div>
+                        <div style="font-size: 1.8em; font-weight: bold; letter-spacing: 2px;">JSP6BX</div>
+                    </div>
+
+                    <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 12px; margin: 20px 0;">
+                        <div style="font-size: 1.2em; font-weight: 600; margin-bottom: 15px; border-bottom: 2px solid rgba(255,255,255,0.3); padding-bottom: 10px;">
+                            ✈️ Flight 1: UA5789 (Outbound)
+                        </div>
+                        <ul class="card-details" style="margin-bottom: 0;">
+                            <li><strong>Date:</strong> Saturday, December 27, 2025</li>
+                            <li><strong>Departure:</strong> 7:10 PM from San Francisco (SFO)</li>
+                            <li><strong>Arrival:</strong> 10:41 PM in Albuquerque (ABQ)</li>
+                            <li><strong>Duration:</strong> 2h 31m (nonstop)</li>
+                            <li><strong>Operated by:</strong> SkyWest DBA United Express</li>
+                            <li><strong>Class:</strong> United Economy (N)</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 12px; margin: 20px 0;">
+                        <div style="font-size: 1.2em; font-weight: 600; margin-bottom: 15px; border-bottom: 2px solid rgba(255,255,255,0.3); padding-bottom: 10px;">
+                            ✈️ Flight 2: UA4644 (Return)
+                        </div>
+                        <ul class="card-details" style="margin-bottom: 0;">
+                            <li><strong>Date:</strong> Wednesday, December 31, 2025</li>
+                            <li><strong>Departure:</strong> 6:31 AM from Albuquerque (ABQ)</li>
+                            <li><strong>Arrival:</strong> 8:40 AM in San Francisco (SFO)</li>
+                            <li><strong>Duration:</strong> 3h 9m (nonstop)</li>
+                            <li><strong>Operated by:</strong> SkyWest DBA United Express</li>
+                            <li><strong>Class:</strong> United Economy (N)</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; margin-top: 20px; font-size: 0.9em;">
+                        <div style="margin-bottom: 8px;"><strong>Travelers:</strong></div>
+                        <div style="margin-left: 10px;">• Brian Cline (eTicket: 0162350132743)</div>
+                        <div style="margin-left: 10px;">• Allison Pierce (eTicket: 0162350132744)</div>
+                    </div>
+
+                    <div style="margin-top: 20px;">
+                        <a href="https://www.united.com/en/us/mytrips" target="_blank" class="btn">Manage Booking on United.com →</a>
+                        <button onclick="shareFlightDetails()" class="btn-share">📋 Share Flight Details</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -547,6 +662,35 @@
         <!-- Hotels Section -->
         <div class="section">
             <h2 class="section-title">🏨 Hotel Options</h2>
+
+            <!--
+            ============================================================
+            WHEN HOTELS ARE BOOKED: Replace the section title above with:
+            <h2 class="section-title">🏨 Hotels - BOOKED!</h2>
+
+            And add this structure for each booked hotel:
+
+            <div class="card-grid">
+                <div class="card flight-card">
+                    <h3>✅ [HOTEL NAME] - Confirmed Booking</h3>
+                    <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px; margin: 15px 0;">
+                        <div style="font-size: 0.9em; margin-bottom: 5px;">Confirmation Number</div>
+                        <div style="font-size: 1.8em; font-weight: bold; letter-spacing: 2px;">[CONFIRMATION #]</div>
+                    </div>
+                    <ul class="card-details">
+                        <li><strong>Check-in:</strong> [DATE & TIME]</li>
+                        <li><strong>Check-out:</strong> [DATE & TIME]</li>
+                        <li><strong>Room Type:</strong> [ROOM TYPE]</li>
+                        <li><strong>Guests:</strong> Brian Cline & Allison Pierce</li>
+                    </ul>
+                    <div style="margin-top: 20px;">
+                        <a href="[HOTEL WEBSITE/MANAGE BOOKING URL]" target="_blank" class="btn">Manage Booking →</a>
+                        <button onclick="shareHotelDetails('[HOTEL NAME]', '[CHECK-IN DATE]', '[CHECK-OUT DATE]', '[CONFIRMATION #]', '[ROOM TYPE]')" class="btn-share">📋 Share Hotel Details</button>
+                    </div>
+                </div>
+            </div>
+            ============================================================
+            -->
 
             <h3 style="color: #4a5568; margin-top: 30px; margin-bottom: 15px;">Night 1: Friday, December 27 (Arriving 10:41 PM)</h3>
             <div class="card-grid">
@@ -1155,5 +1299,117 @@
             <p>Created with Google Flights MCP & SerpAPI • December 2025</p>
         </div>
     </div>
+
+    <!-- Share Notification -->
+    <div id="shareNotification" class="share-notification">
+        ✅ Copied to clipboard!
+    </div>
+
+    <script>
+        // Show notification helper
+        function showNotification(message) {
+            const notification = document.getElementById('shareNotification');
+            notification.textContent = message;
+            notification.classList.add('show');
+
+            setTimeout(() => {
+                notification.classList.add('hide');
+                setTimeout(() => {
+                    notification.classList.remove('show', 'hide');
+                }, 300);
+            }, 2500);
+        }
+
+        // Share flight details
+        function shareFlightDetails() {
+            const flightText = `✈️ SANTA FE HOLIDAY TRIP - FLIGHT DETAILS
+
+🎄 United Airlines Confirmed Booking
+Confirmation Number: JSP6BX
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+OUTBOUND FLIGHT
+Flight: UA5789
+Date: Saturday, December 27, 2025
+Departure: 7:10 PM from San Francisco (SFO)
+Arrival: 10:41 PM in Albuquerque (ABQ)
+Duration: 2h 31m (nonstop)
+Operated by: SkyWest DBA United Express
+Class: United Economy (N)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+RETURN FLIGHT
+Flight: UA4644
+Date: Wednesday, December 31, 2025
+Departure: 6:31 AM from Albuquerque (ABQ)
+Arrival: 8:40 AM in San Francisco (SFO)
+Duration: 3h 9m (nonstop)
+Operated by: SkyWest DBA United Express
+Class: United Economy (N)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TRAVELERS
+• Brian Cline (eTicket: 0162350132743)
+• Allison Pierce (eTicket: 0162350132744)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Manage booking: https://www.united.com/en/us/mytrips
+`;
+
+            // Copy to clipboard
+            navigator.clipboard.writeText(flightText).then(() => {
+                showNotification('✅ Flight details copied to clipboard!');
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+                showNotification('❌ Failed to copy. Please try again.');
+            });
+        }
+
+        // Function to share hotel details (for future use)
+        function shareHotelDetails(hotelName, checkIn, checkOut, confirmationNumber, roomType = '') {
+            const hotelText = `🏨 SANTA FE HOLIDAY TRIP - HOTEL DETAILS
+
+🎄 ${hotelName} - Confirmed Booking
+Confirmation Number: ${confirmationNumber}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+RESERVATION DETAILS
+Check-in: ${checkIn}
+Check-out: ${checkOut}${roomType ? '\nRoom Type: ' + roomType : ''}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+GUESTS
+• Brian Cline
+• Allison Pierce
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+`;
+
+            navigator.clipboard.writeText(hotelText).then(() => {
+                showNotification('✅ Hotel details copied to clipboard!');
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+                showNotification('❌ Failed to copy. Please try again.');
+            });
+        }
+
+        // Generic share function for any section
+        function shareSection(title, content) {
+            const shareText = `${title}\n\n${content}`;
+
+            navigator.clipboard.writeText(shareText).then(() => {
+                showNotification('✅ Details copied to clipboard!');
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+                showNotification('❌ Failed to copy. Please try again.');
+            });
+        }
+    </script>
 </body>
 </html>
