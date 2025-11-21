@@ -537,8 +537,8 @@
             }
         }
 
-        /* Share Button Styles */
-        .btn-share {
+        /* Copy Flight Details Button Styles */
+        .btn-copy-flight {
             display: inline-block;
             padding: 12px 24px;
             background: #48bb78;
@@ -555,13 +555,13 @@
             font-size: 1em;
         }
 
-        .btn-share:hover {
+        .btn-copy-flight:hover {
             background: #38a169;
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(72, 187, 120, 0.3);
         }
 
-        .btn-share:active {
+        .btn-copy-flight:active {
             transform: translateY(0);
         }
 
@@ -680,7 +680,7 @@
 
                     <div style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px;">
                         <a href="https://www.united.com/en/us/mytrips" target="_blank" class="btn">Manage Booking on United.com →</a>
-                        <button onclick="shareFlightDetails()" class="btn-share">📋 Share Flight Details</button>
+                        <button onclick="shareFlightDetails()" class="btn-copy-flight">📋 Copy Flight Details</button>
                     </div>
                 </div>
             </div>
@@ -714,7 +714,7 @@
                     </ul>
                     <div style="margin-top: 20px;">
                         <a href="[HOTEL WEBSITE/MANAGE BOOKING URL]" target="_blank" class="btn">Manage Booking →</a>
-                        <button onclick="shareHotelDetails('[HOTEL NAME]', '[CHECK-IN DATE]', '[CHECK-OUT DATE]', '[CONFIRMATION #]', '[ROOM TYPE]')" class="btn-share">📋 Share Hotel Details</button>
+                        <button onclick="shareHotelDetails('[HOTEL NAME]', '[CHECK-IN DATE]', '[CHECK-OUT DATE]', '[CONFIRMATION #]', '[ROOM TYPE]')" class="btn-copy-flight">📋 Copy Hotel Details</button>
                     </div>
                 </div>
             </div>
