@@ -1,277 +1,287 @@
 #!/usr/bin/osascript
 
+-- This script creates a properly formatted Apple Note using native styles
+
 tell application "Notes"
+	activate
+
 	-- Create new note
-	set newNote to make new note at folder "Notes"
+	tell account "iCloud"
+		set newNote to make new note at folder "Notes"
 
-	tell newNote
-		set name to "🎄 Santa Fe Holiday Trip - Dec 27-31, 2025"
+		tell newNote
+			-- Set the title
+			set name to "🎄 Santa Fe Holiday Trip - Dec 27-31, 2025"
 
-		-- Using Apple Notes native HTML format with proper checklist and heading styles
-		set body to "<div style='font-family: -apple-system, Helvetica;'>
-<div style='font-size: 28pt; font-weight: bold; margin-bottom: 8px;'>🎄 Santa Fe Holiday Trip</div>
-<div style='font-size: 13pt; color: #666; margin-bottom: 20px;'><b>December 27-31, 2025</b></div>
-<div style='height: 1px; background: #ddd; margin: 20px 0;'></div>
+			-- Set initial body text (we'll format it next)
+			set body to "🎄 Santa Fe Holiday Trip
+December 27-31, 2025
 
-<div style='font-size: 20pt; font-weight: bold; margin-top: 20px; margin-bottom: 10px;'>📋 Trip Preparation Checklist</div>
+📋 Trip Preparation Checklist
 
-<div style='font-size: 17pt; font-weight: bold; margin-top: 16px; margin-bottom: 8px;'>🔴 Do Now (Time-Sensitive)</div>
-<div data-type='checklist'>
-<div><input type='checkbox'/> Book hotel for Dec 27 (La Quinta/Hampton Inn/Best Western at ABQ airport)</div>
-<div><input type='checkbox'/> Book hotel for Dec 30 (La Quinta/Holiday Inn Express/Comfort Suites at ABQ airport)</div>
-<div><input type='checkbox'/> Reserve tickets for Meow Wolf (popular, can sell out)</div>
-<div><input type='checkbox'/> Book Ten Thousand Waves spa appointment (if interested - books up fast)</div>
-</div>
+🔴 Do Now (Time-Sensitive)
+Book hotel for Dec 27 (La Quinta/Hampton Inn/Best Western at ABQ airport)
+Book hotel for Dec 30 (La Quinta/Holiday Inn Express/Comfort Suites at ABQ airport)
+Reserve tickets for Meow Wolf (popular, can sell out)
+Book Ten Thousand Waves spa appointment (if interested - books up fast)
 
-<div style='font-size: 17pt; font-weight: bold; margin-top: 16px; margin-bottom: 8px;'>🟡 Do Soon (2-4 Weeks Before)</div>
-<div data-type='checklist'>
-<div><input type='checkbox'/> Purchase Rail Runner train tickets (ABQ ↔ Santa Fe)</div>
-<div><input type='checkbox'/> Reserve Georgia O'Keeffe Museum tickets</div>
-<div><input type='checkbox'/> Coordinate arrival/pickup plans with Allison's parents</div>
-<div><input type='checkbox'/> Schedule breakfast or dinner with Landon in Albuquerque</div>
-<div><input type='checkbox'/> Check Santa Fe Botanical Garden GLOW availability</div>
-<div><input type='checkbox'/> Research restaurant reservations for Dec 27 & 30 dinners</div>
-</div>
+🟡 Do Soon (2-4 Weeks Before)
+Purchase Rail Runner train tickets (ABQ ↔ Santa Fe)
+Reserve Georgia O'Keeffe Museum tickets
+Coordinate arrival/pickup plans with Allison's parents
+Schedule breakfast or dinner with Landon in Albuquerque
+Check Santa Fe Botanical Garden GLOW availability
+Research restaurant reservations for Dec 27 & 30 dinners
 
-<div style='font-size: 17pt; font-weight: bold; margin-top: 16px; margin-bottom: 8px;'>🟢 Before Departure (Final Week)</div>
-<div data-type='checklist'>
-<div><input type='checkbox'/> Pack for winter weather (layers, warm coat, boots)</div>
-<div><input type='checkbox'/> Download United app and check-in 24 hours before flights</div>
-<div><input type='checkbox'/> Confirm hotel reservations</div>
-<div><input type='checkbox'/> Print/save confirmations offline (flight, hotels, activities)</div>
-<div><input type='checkbox'/> Check weather forecast for Santa Fe</div>
-<div><input type='checkbox'/> Arrange BART tickets or SFO transportation</div>
-</div>
+🟢 Before Departure (Final Week)
+Pack for winter weather (layers, warm coat, boots)
+Download United app and check-in 24 hours before flights
+Confirm hotel reservations
+Print/save confirmations offline (flight, hotels, activities)
+Check weather forecast for Santa Fe
+Arrange BART tickets or SFO transportation
 
-<div style='height: 1px; background: #ddd; margin: 20px 0;'></div>
+✈️ Flights - BOOKED!
+United Airlines Confirmation: JSP6BX
 
-<div style='font-size: 20pt; font-weight: bold; margin-top: 20px; margin-bottom: 10px;'>✈️ Flights - BOOKED!</div>
-<div style='font-size: 13pt; margin-bottom: 10px;'><b>United Airlines Confirmation: JSP6BX</b></div>
+Outbound Flight - UA5789
+Date: Saturday, December 27, 2025
+Departure: 7:10 PM from San Francisco (SFO)
+Arrival: 10:41 PM in Albuquerque (ABQ)
+Duration: 2h 31m (nonstop)
+Class: United Economy (N)
+Operated by: SkyWest DBA United Express
 
-<div style='font-size: 17pt; font-weight: bold; margin-top: 16px; margin-bottom: 8px;'>Outbound Flight - UA5789</div>
-<div style='margin-left: 20px;'>
-<div><b>Date:</b> Saturday, December 27, 2025</div>
-<div><b>Departure:</b> 7:10 PM from San Francisco (SFO)</div>
-<div><b>Arrival:</b> 10:41 PM in Albuquerque (ABQ)</div>
-<div><b>Duration:</b> 2h 31m (nonstop)</div>
-<div><b>Class:</b> United Economy (N)</div>
-<div><b>Operated by:</b> SkyWest DBA United Express</div>
-</div>
+Return Flight - UA4644
+Date: Wednesday, December 31, 2025 (New Year's Eve!)
+Departure: 6:31 AM from Albuquerque (ABQ)
+Arrival: 8:40 AM in San Francisco (SFO)
+Duration: 3h 9m (nonstop)
+Class: United Economy (N)
+Operated by: SkyWest DBA United Express
 
-<div style='font-size: 17pt; font-weight: bold; margin-top: 16px; margin-bottom: 8px;'>Return Flight - UA4644</div>
-<div style='margin-left: 20px;'>
-<div><b>Date:</b> Wednesday, December 31, 2025 (New Year's Eve!)</div>
-<div><b>Departure:</b> 6:31 AM from Albuquerque (ABQ)</div>
-<div><b>Arrival:</b> 8:40 AM in San Francisco (SFO)</div>
-<div><b>Duration:</b> 3h 9m (nonstop)</div>
-<div><b>Class:</b> United Economy (N)</div>
-<div><b>Operated by:</b> SkyWest DBA United Express</div>
-</div>
+Travelers:
+• Brian Cline (eTicket: 0162350132743)
+• Allison Pierce (eTicket: 0162350132744)
 
-<div style='margin-top: 10px; margin-left: 20px;'>
-<div><b>Travelers:</b></div>
-<div>• Brian Cline (eTicket: 0162350132743)</div>
-<div>• Allison Pierce (eTicket: 0162350132744)</div>
-</div>
+🔗 https://www.united.com/en/us/mytrips
 
-<div style='margin-top: 10px;'><a href='https://www.united.com/en/us/mytrips'>Manage Booking on United.com →</a></div>
+🏨 Hotel Options
 
-<div style='height: 1px; background: #ddd; margin: 20px 0;'></div>
+Night 1: Friday, December 27 (Arriving 10:41 PM)
+Budget Option - La Quinta Inn Airport ($86/night)
+⭐️ 3.4 (1,407 reviews)
+Free breakfast, airport shuttle, pool & hot tub, parking
 
-<div style='font-size: 20pt; font-weight: bold; margin-top: 20px; margin-bottom: 10px;'>🏨 Hotel Options</div>
+Recommended - Hampton Inn & Suites ($112/night)
+⭐️ 4.4 (1,073 reviews)
+Free breakfast, airport shuttle, indoor pool, modern fitness center
 
-<div style='font-size: 17pt; font-weight: bold; margin-top: 16px; margin-bottom: 8px;'>Night 1: Friday, December 27 (Arriving 10:41 PM)</div>
+Night 2: Monday, December 30 (For Early Dec 31 Flight)
+Budget Option - La Quinta Inn Airport ($75/night)
+⭐️ 3.4 (1,407 reviews)
+Free breakfast, airport shuttle, easy early morning access
 
-<div style='margin-left: 20px; margin-bottom: 15px;'>
-<div><b>Budget Option - La Quinta Inn Airport ($86/night)</b></div>
-<div>⭐️ 3.4 (1,407 reviews)</div>
-<div>Free breakfast, airport shuttle, pool & hot tub, parking</div>
-</div>
+Recommended - Holiday Inn Express ($86/night)
+⭐️ 4.3 (799 reviews)
+Free breakfast, airport shuttle, indoor pool, excellent service
 
-<div style='margin-left: 20px; margin-bottom: 15px;'>
-<div><b>Recommended - Hampton Inn & Suites ($112/night)</b></div>
-<div>⭐️ 4.4 (1,073 reviews)</div>
-<div>Free breakfast, airport shuttle, indoor pool, modern fitness center</div>
-</div>
+Premium - Comfort Suites Airport ($121/night)
+⭐️ 4.9 (2,576 reviews)
+Free breakfast, airport shuttle, exceptional cleanliness
 
-<div style='font-size: 17pt; font-weight: bold; margin-top: 16px; margin-bottom: 8px;'>Night 2: Monday, December 30 (For Early Dec 31 Flight)</div>
+🚗 Transportation
+✅ Chosen Plan
+• Parents' vehicles available in Santa Fe!
+• Rail Runner train (Allison's preferred) - Scenic ride ABQ ↔ Santa Fe
+• ~$10 per person, ~1.5-2 hours
+• May need Uber to/from train stations
+🔗 https://www.riometro.org/rail-runner
 
-<div style='margin-left: 20px; margin-bottom: 15px;'>
-<div><b>Budget Option - La Quinta Inn Airport ($75/night)</b></div>
-<div>⭐️ 3.4 (1,407 reviews)</div>
-<div>Free breakfast, airport shuttle, easy early morning access</div>
-</div>
+📅 Sample Itinerary
 
-<div style='margin-left: 20px; margin-bottom: 15px;'>
-<div><b>Recommended - Holiday Inn Express ($86/night)</b></div>
-<div>⭐️ 4.3 (799 reviews)</div>
-<div>Free breakfast, airport shuttle, indoor pool, excellent service</div>
-</div>
+Friday, December 27
+4:15 PM - Leave from 639 Guerrero St
+4:30 PM - BART to SFO (~45 min)
+7:10 PM - Depart SFO on United
+10:41 PM - Arrive ABQ
+11:00 PM - Check into airport hotel
 
-<div style='margin-left: 20px; margin-bottom: 15px;'>
-<div><b>Premium - Comfort Suites Airport ($121/night)</b></div>
-<div>⭐️ 4.9 (2,576 reviews)</div>
-<div>Free breakfast, airport shuttle, exceptional cleanliness</div>
-</div>
+Saturday, December 28
+Option A: 8:00 AM - Breakfast with Landon in Albuquerque
+10:00 AM - Take Rail Runner to Santa Fe OR parents pick up
+~12:00 PM - Arrive Santa Fe, settle in
+Afternoon/evening: Explore Santa Fe Plaza, galleries (just you two!)
 
-<div style='height: 1px; background: #ddd; margin: 20px 0;'></div>
+🎂 Sunday, December 29 - BIRTHDAY CELEBRATION!
+Allison's Dad & Brother's Birthday!
+Morning: Relaxed time at parents' house
+Daytime: Could explore (Meow Wolf, Georgia O'Keeffe, Canyon Road)
+Evening: 🌶️ Special Birthday Dinner at Sazon Mexican Restaurant
+Parents treating - incredible moles from Mexico, one of Santa Fe's best!
+Birthday celebration with family
 
-<div style='font-size: 20pt; font-weight: bold; margin-top: 20px; margin-bottom: 10px;'>🚗 Transportation</div>
+Monday, December 30
+Morning: Final Santa Fe exploration
+Afternoon: Time with parents at their house
+Option B: Evening - Dinner with Landon in Albuquerque
+~6:00 PM - Drive/Rail Runner back to ABQ
+7:30 PM - Check into airport hotel
+Early to bed for 6:31 AM flight!
 
-<div style='margin-left: 20px;'>
-<div style='margin-bottom: 10px;'><b>✅ Chosen Plan</b></div>
-<div>• Parents' vehicles available in Santa Fe!</div>
-<div>• Rail Runner train (Allison's preferred) - Scenic ride ABQ ↔ Santa Fe</div>
-<div>• ~$10 per person, ~1.5-2 hours</div>
-<div>• May need Uber to/from train stations</div>
-<div style='margin-top: 8px;'><a href='https://www.riometro.org/rail-runner'>Rail Runner Schedule</a></div>
-</div>
+Tuesday, December 31 - New Year's Eve!
+5:00 AM - Wake up (at airport - no drive!)
+6:31 AM - Depart ABQ
+8:40 AM - Arrive SFO
+10:00 AM - Home by mid-morning to celebrate NYE!
 
-<div style='height: 1px; background: #ddd; margin: 20px 0;'></div>
+🎨 Things to Do in Santa Fe
 
-<div style='font-size: 20pt; font-weight: bold; margin-top: 20px; margin-bottom: 10px;'>📅 Sample Itinerary</div>
+Outdoor Adventures
+⛷️ Ski Santa Fe - 16 miles from downtown, 86 trails
+❄️ Snowshoeing - Forest trails perfect for winter
+⛰️ Atalaya Mountain Trail - 6-mile round trip
+🥾 Dale Ball Trails - 25-mile network
 
-<div style='font-size: 17pt; font-weight: bold; margin-top: 16px; margin-bottom: 8px;'>Friday, December 27</div>
-<div style='margin-left: 20px;'>
-<div>4:15 PM - Leave from 639 Guerrero St</div>
-<div>4:30 PM - BART to SFO (~45 min)</div>
-<div>7:10 PM - Depart SFO on United</div>
-<div>10:41 PM - Arrive ABQ</div>
-<div>11:00 PM - Check into airport hotel</div>
-</div>
+Arts & Culture
+🎭 Meow Wolf - https://meowwolf.com/visit/santa-fe
+🖼️ Georgia O'Keeffe Museum - https://www.okeeffemuseum.org/
+🎨 Canyon Road Galleries - Over 100 galleries
+🎄 Santa Fe Plaza - Historic downtown with holiday lighting
 
-<div style='font-size: 17pt; font-weight: bold; margin-top: 16px; margin-bottom: 8px;'>Saturday, December 28</div>
-<div style='margin-left: 20px;'>
-<div><b>Option A:</b> 8:00 AM - Breakfast with Landon in Albuquerque</div>
-<div>10:00 AM - Take Rail Runner to Santa Fe OR parents pick up</div>
-<div>~12:00 PM - Arrive Santa Fe, settle in</div>
-<div>Afternoon/evening: Explore Santa Fe Plaza, galleries (just you two!)</div>
-</div>
+Relaxation
+🧖 Ten Thousand Waves - https://tenthousandwaves.com/
+✨ Santa Fe Botanical Garden GLOW - Holiday light show
 
-<div style='font-size: 17pt; font-weight: bold; margin-top: 16px; margin-bottom: 8px;'>🎂 Sunday, December 29 - BIRTHDAY CELEBRATION!</div>
-<div style='margin-left: 20px;'>
-<div style='margin-bottom: 8px;'><b>Allison's Dad & Brother's Birthday!</b></div>
-<div>Morning: Relaxed time at parents' house</div>
-<div>Daytime: Could explore (Meow Wolf, Georgia O'Keeffe, Canyon Road)</div>
-<div><b>Evening: 🌶️ Special Birthday Dinner at Sazon Mexican Restaurant</b></div>
-<div style='margin-left: 20px; font-style: italic;'>Parents treating - incredible moles from Mexico, one of Santa Fe's best!</div>
-<div>Birthday celebration with family</div>
-</div>
+💰 Trip Cost Estimates (Per Person - Couple)
 
-<div style='font-size: 17pt; font-weight: bold; margin-top: 16px; margin-bottom: 8px;'>Monday, December 30</div>
-<div style='margin-left: 20px;'>
-<div>Morning: Final Santa Fe exploration</div>
-<div>Afternoon: Time with parents at their house</div>
-<div><b>Option B:</b> Evening - Dinner with Landon in Albuquerque</div>
-<div>~6:00 PM - Drive/Rail Runner back to ABQ</div>
-<div>7:30 PM - Check into airport hotel</div>
-<div>Early to bed for 6:31 AM flight!</div>
-</div>
+Budget Option: $597.50
+Flights: $421
+BART to/from SFO: $21
+Hotels (split): $80.50
+Rail Runner + Uber: $25
+Dinners (2): $50
 
-<div style='font-size: 17pt; font-weight: bold; margin-top: 16px; margin-bottom: 8px;'>Tuesday, December 31 - New Year's Eve!</div>
-<div style='margin-left: 20px;'>
-<div>5:00 AM - Wake up (at airport - no drive!)</div>
-<div>6:31 AM - Depart ABQ</div>
-<div>8:40 AM - Arrive SFO</div>
-<div><b>10:00 AM - Home by mid-morning to celebrate NYE!</b></div>
-</div>
+Recommended Option: $631
+Flights: $421
+BART to/from SFO: $21
+Hotels (split): $99
+Rail Runner + Uber: $30
+Dinners (2): $60
 
-<div style='height: 1px; background: #ddd; margin: 20px 0;'></div>
+Premium Option: $692.50
+Flights: $421
+Uber to/from SFO (split): $55
+Hotels (split): $116.50
+Rail Runner + Uber: $30
+Dinners (2): $70
 
-<div style='font-size: 20pt; font-weight: bold; margin-top: 20px; margin-bottom: 10px;'>🎨 Things to Do in Santa Fe</div>
+All hotel costs split between two people. Parents' vehicles available in Santa Fe (free!)
 
-<div style='font-size: 17pt; font-weight: bold; margin-top: 16px; margin-bottom: 8px;'>Outdoor Adventures</div>
-<div style='margin-left: 20px;'>
-<div>⛷️ Ski Santa Fe - 16 miles from downtown, 86 trails</div>
-<div>❄️ Snowshoeing - Forest trails perfect for winter</div>
-<div>⛰️ Atalaya Mountain Trail - 6-mile round trip</div>
-<div>🥾 Dale Ball Trails - 25-mile network</div>
-</div>
+📝 Important Notes
+• Parents' Mobility: Not super mobile - time together mostly at their house
+• Solo Exploration: Museums, Canyon Road, Meow Wolf = just you two
+• Special Dinner: Parents treating to amazing mole restaurant!
+• See Landon: Options for breakfast or dinner in Albuquerque
 
-<div style='font-size: 17pt; font-weight: bold; margin-top: 16px; margin-bottom: 8px;'>Arts & Culture</div>
-<div style='margin-left: 20px;'>
-<div>🎭 <a href='https://meowwolf.com/visit/santa-fe'>Meow Wolf</a> - Immersive art experience</div>
-<div>🖼️ <a href='https://www.okeeffemuseum.org/'>Georgia O'Keeffe Museum</a></div>
-<div>🎨 Canyon Road Galleries - Over 100 galleries</div>
-<div>🎄 Santa Fe Plaza - Historic downtown with holiday lighting</div>
-</div>
-
-<div style='font-size: 17pt; font-weight: bold; margin-top: 16px; margin-bottom: 8px;'>Relaxation</div>
-<div style='margin-left: 20px;'>
-<div>🧖 <a href='https://tenthousandwaves.com/'>Ten Thousand Waves</a> - Japanese spa with forest hot tubs</div>
-<div>✨ Santa Fe Botanical Garden GLOW - Holiday light show</div>
-</div>
-
-<div style='height: 1px; background: #ddd; margin: 20px 0;'></div>
-
-<div style='font-size: 20pt; font-weight: bold; margin-top: 20px; margin-bottom: 10px;'>💰 Trip Cost Estimates (Per Person - Couple)</div>
-
-<div style='font-size: 17pt; font-weight: bold; margin-top: 16px; margin-bottom: 8px;'>Budget Option: $597.50</div>
-<div style='margin-left: 20px;'>
-<div>Flights: $421</div>
-<div>BART to/from SFO: $21</div>
-<div>Hotels (split): $80.50</div>
-<div>Rail Runner + Uber: $25</div>
-<div>Dinners (2): $50</div>
-</div>
-
-<div style='font-size: 17pt; font-weight: bold; margin-top: 16px; margin-bottom: 8px;'>Recommended Option: $631</div>
-<div style='margin-left: 20px;'>
-<div>Flights: $421</div>
-<div>BART to/from SFO: $21</div>
-<div>Hotels (split): $99</div>
-<div>Rail Runner + Uber: $30</div>
-<div>Dinners (2): $60</div>
-</div>
-
-<div style='font-size: 17pt; font-weight: bold; margin-top: 16px; margin-bottom: 8px;'>Premium Option: $692.50</div>
-<div style='margin-left: 20px;'>
-<div>Flights: $421</div>
-<div>Uber to/from SFO (split): $55</div>
-<div>Hotels (split): $116.50</div>
-<div>Rail Runner + Uber: $30</div>
-<div>Dinners (2): $70</div>
-</div>
-
-<div style='margin-top: 10px; font-style: italic; color: #666;'>All hotel costs split between two people. Parents' vehicles available in Santa Fe (free!)</div>
-
-<div style='height: 1px; background: #ddd; margin: 20px 0;'></div>
-
-<div style='font-size: 20pt; font-weight: bold; margin-top: 20px; margin-bottom: 10px;'>📝 Important Notes</div>
-<div style='margin-left: 20px;'>
-<div><b>Parents' Mobility:</b> Not super mobile - time together mostly at their house</div>
-<div><b>Solo Exploration:</b> Museums, Canyon Road, Meow Wolf = just you two</div>
-<div><b>Special Dinner:</b> Parents treating to amazing mole restaurant!</div>
-<div><b>See Landon:</b> Options for breakfast or dinner in Albuquerque</div>
-</div>
-
-<div style='height: 1px; background: #ddd; margin: 20px 0;'></div>
-
-<div style='font-size: 20pt; font-weight: bold; margin-top: 20px; margin-bottom: 10px;'>💡 Consider: Arriving December 26 Instead?</div>
-<div style='margin-left: 20px;'>
+💡 Consider: Arriving December 26 Instead?
 Flights on Dec 26 are about the same price. Would give an extra full day in Santa Fe for exploring before family celebrations.
-</div>
 
-<div style='height: 1px; background: #ddd; margin: 20px 0;'></div>
+🔗 Quick Links
+https://www.united.com/en/us/mytrips
+https://www.riometro.org/rail-runner
+https://meowwolf.com/visit/santa-fe
+https://www.okeeffemuseum.org/
+https://tenthousandwaves.com/
+https://www.santafe.org/
+https://sfo-santa-fe-holiday-trip-2025.vercel.app
 
-<div style='font-size: 20pt; font-weight: bold; margin-top: 20px; margin-bottom: 10px;'>🔗 Quick Links</div>
-<div style='margin-left: 20px;'>
-<div><a href='https://www.united.com/en/us/mytrips'>United Airlines - Manage Booking</a></div>
-<div><a href='https://www.riometro.org/rail-runner'>Rail Runner Train Schedule</a></div>
-<div><a href='https://meowwolf.com/visit/santa-fe'>Meow Wolf Santa Fe</a></div>
-<div><a href='https://www.okeeffemuseum.org/'>Georgia O'Keeffe Museum</a></div>
-<div><a href='https://tenthousandwaves.com/'>Ten Thousand Waves Spa</a></div>
-<div><a href='https://www.santafe.org/'>Santa Fe Visitor Info</a></div>
-<div><a href='https://sfo-santa-fe-holiday-trip-2025.vercel.app'>Full Trip Plan Website</a></div>
-</div>
+Last Updated: November 21, 2025"
+		end tell
 
-<div style='margin-top: 30px; font-style: italic; color: #999; font-size: 11pt;'>Last Updated: November 21, 2025</div>
-</div>"
+		-- Show the note
+		show newNote
 	end tell
-
-	-- Show the note
-	show newNote
-
 end tell
 
-return "Note created successfully with native Apple Notes formatting!"
+-- Now use System Events to apply formatting
+tell application "System Events"
+	tell process "Notes"
+		-- Wait for note to be ready
+		delay 0.5
+
+		-- Select all text first
+		keystroke "a" using command down
+
+		-- Make everything body text first (to reset)
+		key code 11 using {command down, option down} -- cmd-opt-0 for body
+
+		-- Now apply specific formatting
+		-- Go to start of document
+		key code 126 using command down -- cmd-up arrow
+
+		-- Format "🎄 Santa Fe Holiday Trip" as Title
+		keystroke "f" using command down -- Find
+		delay 0.3
+		keystroke "🎄 Santa Fe Holiday Trip"
+		delay 0.2
+		key code 36 -- Return
+		delay 0.2
+		keystroke "t" using {command down, shift down} -- Title format
+		key code 53 -- Escape to close find
+
+		-- Format major sections as Headings
+		set headings to {"📋 Trip Preparation Checklist", "✈️ Flights - BOOKED!", "🏨 Hotel Options", "🚗 Transportation", "📅 Sample Itinerary", "🎨 Things to Do in Santa Fe", "💰 Trip Cost Estimates (Per Person - Couple)", "📝 Important Notes", "💡 Consider: Arriving December 26 Instead?", "🔗 Quick Links"}
+
+		repeat with heading in headings
+			keystroke "f" using command down
+			delay 0.3
+			keystroke heading
+			delay 0.2
+			key code 36 -- Return
+			delay 0.2
+			keystroke "h" using {command down, shift down} -- Heading format
+			delay 0.1
+			key code 53 -- Escape
+		end repeat
+
+		-- Format subsections as Subheadings
+		set subheadings to {"🔴 Do Now (Time-Sensitive)", "🟡 Do Soon (2-4 Weeks Before)", "🟢 Before Departure (Final Week)", "Outbound Flight - UA5789", "Return Flight - UA4644", "Night 1: Friday, December 27 (Arriving 10:41 PM)", "Night 2: Monday, December 30 (For Early Dec 31 Flight)", "Friday, December 27", "Saturday, December 28", "🎂 Sunday, December 29 - BIRTHDAY CELEBRATION!", "Monday, December 30", "Tuesday, December 31 - New Year's Eve!", "Outdoor Adventures", "Arts & Culture", "Relaxation", "Budget Option: $597.50", "Recommended Option: $631", "Premium Option: $692.50"}
+
+		repeat with subheading in subheadings
+			keystroke "f" using command down
+			delay 0.3
+			keystroke subheading
+			delay 0.2
+			key code 36 -- Return
+			delay 0.2
+			keystroke "j" using {command down, shift down} -- Subheading format
+			delay 0.1
+			key code 53 -- Escape
+		end repeat
+
+		-- Format checklist items
+		set checklistSections to {"Book hotel for Dec 27", "Book hotel for Dec 30", "Reserve tickets for Meow Wolf", "Book Ten Thousand Waves", "Purchase Rail Runner", "Reserve Georgia O'Keeffe", "Coordinate arrival/pickup", "Schedule breakfast or dinner with Landon", "Check Santa Fe Botanical Garden", "Research restaurant reservations", "Pack for winter weather", "Download United app", "Confirm hotel reservations", "Print/save confirmations", "Check weather forecast", "Arrange BART tickets"}
+
+		repeat with checklistItem in checklistSections
+			keystroke "f" using command down
+			delay 0.3
+			keystroke checklistItem
+			delay 0.2
+			key code 36 -- Return
+			delay 0.2
+			keystroke "l" using {command down, shift down} -- Checklist format
+			delay 0.1
+			key code 53 -- Escape
+		end repeat
+
+		-- Close find dialog if still open
+		key code 53 -- Escape
+
+		-- Go to top of note
+		key code 126 using command down
+
+	end tell
+end tell
+
+return "Note created with native Apple Notes formatting!"
